@@ -1,0 +1,128 @@
+:root {
+  --fraunces-font: 'Fraunces', serif;
+  --montserrat-font: 'Montserrat', sans-serif;
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  font-size: 14px;
+  font-family: var(--montserrat-font);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+}
+
+img {
+  width: 100%;
+}
+
+.product {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 30rem;
+}
+
+.product__img--mobile {
+  display: block;
+}
+
+.product__img--desktop {
+  display: none;
+}
+
+.product__content {
+  padding: 1.5rem;
+}
+
+.product__category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--dark-grayish-blue);
+}
+
+.product__title {
+  font-family: --fraunces-font;
+  margin-block: 1rem;
+  font-weight: bold;
+  font-size: 2.3rem;
+}
+
+.product__description {
+  color: var(--dark-grayish-blue);
+  margin-block: 1rem;
+  line-height: 1.5;
+}
+
+.product__price {
+  display: flex;
+  margin-block: 1.2rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__price-current {
+  color: var(--dark-cyan);
+  font-size: 2.5rem;
+  font-family: var(--fraunces-font);
+}
+
+.product__price-original {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+}
+
+.product__add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--dark-cyan);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.product__add-btn:hover,
+.product__add-btn:focus {
+  cursor: pointer;
+  background-color: var(--dark-blue);
+}
+
+@media (min-width: 40rem) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 40rem;
+  }
+
+  .product__img--mobile {
+    display: none;
+  }
+
+  .product__img--desktop {
+    display: block;
+  }
+}
